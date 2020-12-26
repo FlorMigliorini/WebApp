@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApp.Models.Company>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">Companies</h2>
+</div>
+
+    <li class="btn btn-outline-primary border-bottom p-5s mt-2"> @Html.ActionLink("Create New", "Create")</li>
+
+<table class="table mt-2">
+    <tr class="table-primary">
+       
+        <th class="table-light">
+            @Html.DisplayNameFor(model => model.Company_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company_Name)
+        </td>
+        <td>
+            <ul>
+                <li class="btn btn-outline-primary border-bottom p-5s">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CompanyID })</li> |
+                <li class="btn btn-outline-primary border-bottom p-5s">
+                    @Html.ActionLink("Details", "Details", new { id = item.CompanyID }) </li>|
+                <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Delete", "Delete", new { id = item.CompanyID })</li>
+</ul>
+        </td>
+    </tr>
+}
+
+</table>

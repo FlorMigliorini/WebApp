@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WebApp.Models.Assignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">Assignments</h2>
+</div>
+
+
+<li class="btn btn-outline-primary border-bottom p-5s mt-2">
+    @Html.ActionLink("Create New", "Create")</li>
+
+    <table class="table mt-2">
+        <tr class="table-primary">
+            <th class="table-light">
+                @Html.DisplayNameFor(model => model.AssignmentID)
+            </th>
+            <th class="table-light">
+                @Html.DisplayNameFor(model => model.Job)
+            </th>
+            <th class="table-light">
+                @Html.DisplayNameFor(model => model.DeadLineDate)
+            </th>
+            <th class="table-light"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td onmouseover="onIdMouseOver(@item.AssignmentID)">
+                    @Html.DisplayFor(modelItem => item.AssignmentID)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeadLineDate)
+                </td>
+                <td>
+                    <ul>
+                        <li class="btn btn-outline-primary border-bottom p-5s">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.AssignmentID })
+                        </li> |
+                        <li class="btn btn-outline-primary border-bottom p-5s">
+                            @Html.ActionLink("Details", "Details", new { id = item.AssignmentID })
+                        </li> |
+                        <li class="btn btn-outline-primary border-bottom p-5s">  @Html.ActionLink("Delete", "Delete", new { id = item.AssignmentID })</li>
+                    </ul>
+                </td>
+            </tr>
+
+
+        }
+
+    </table>
+
+
+    @section Scripts{
+        <script type="text/javascript">
+            function onIdMouseOver(id) {
+                alert("Mouseover Test");
+                $.ajax({
+                    url: "/api/AssignmentsAPI",
+                    data: {
+                        id: AssignmentID
+                    },
+                    success: function (result) {
+                        console.log(result);
+                        alert(JSON.stringify(result));
+                    }
+                });
+            }
+        </script>
+    }

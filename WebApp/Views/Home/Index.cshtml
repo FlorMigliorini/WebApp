@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="row animated slideInRight text-white bg-primary">
+        <div class="col-12 mx-auto text-center">
+            <img src="~/img/flor.jpg" class="rounded-circle img-circle" id="perfil-foto" width="100" />
+            <h1>Florence Migliorini</h1>
+            <small>Computer Science student - NCI Dublin</small>
+        </div>
+        <div class=" mx-auto text-center">
+            <ul class="nav mx-auto text-center">
+                <li class="nav-item text-center">
+                    <a class="nav-link active text-white" href="flor.migliorini@gmail.com">Email</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link text-white" href="https://github.com/FlorMigliorini">Github</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link text-white"
+                       href="https://www.linkedin.com/in/florence-migliorini/">LinkedIn</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="container mt-3 bg-light animated slideInLeft">
+    <h3 class="border-bottom p-5s">First ASP.NET MVC Application</h3>
+    <div class="row mt-3">
+
+
+        <div class="col-sm mt-3">
+            <h5>About project</h5>
+            <p>
+                This project was done with ASP.NET MVC, which is a Microsoft framework for the development of Web applications. For the development of this project, Visual Studio Community Edition 2019 was used, and the language adopted for the application is C#.
+                The objective of this work is to demonstrate the result of teaching and learning in the development of web applications, using C#.
+                So there is nothing like a simple example application to demonstrate what we learned during this semester.
+                The project was developed step by step, creating a simple web page that stores data, and using the CRUD functions (create, read, update and delete.)
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <h2 class="text-primary">Entity Framework</h2>
+            <p>
+                The first step was to create the classes inside the Models folder.
+                There are four tables populated with data.
+                The tables are displaying on different pages, where the user can access the information,
+                and can also insert, update, and delete data.
+
+            </p>
+            
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-primary">API and AJAX</h2>
+            <p>
+                The functionality should be used to provide interactive effects on web pages using data
+                retrieved from the database, unfortunately, it has not been completed successfully
+                and only the alert message is working for AJAX. The API, it's displaying the data
+                but doesn't take it from the database, or the APIController.
+
+            </p>
+            
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-primary">Layout </h2>
+            <p>
+                I personalized on my style all the layouts.
+                Simple and stylish, I used Bootstrap and CSS, With animations on the homepage.
+            </p>
+            
+        </div>
+    </div>
+    <div class="row mt-3">
+
+
+        <div class="col-sm mt-3 text-center">
+           
+            <small>
+                For more informations please click here <button class="animated tada btn btn-link border-bottom">@Html.ActionLink("Info", "About", "Home")</button>
+            </small>
+        </div>
+    </div>
+       
+
+</section>
+
+<section class="col-sm mt-3">
+    <ul class="col-sm mt-5">
+        <li class="btn btn-outline-primary border-bottom p-5s"><a id="GetAll" style="">Show List</a></li>
+        <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Programmer", "Index", "Programmers")</li>
+        <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Company", "Index", "Companies")</li>
+        <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Assignments", "Index", "Assignments")</li>
+        <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Departments", "Index", "Departments")</li>
+    </ul>
+ 
+        <div class="row">
+            <div class="col-sm mt-3">
+                <h2>Results</h2>
+                <p id="result"></p>
+            </div>
+        </div>
+   
+</section>

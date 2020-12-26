@@ -1,0 +1,33 @@
+﻿@model WebApp.Models.Company
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">Details</h2>
+</div>
+
+<div>
+    <h4 class="text-primary">Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="form-group badge-light">
+            @Html.DisplayNameFor(model => model.Company_Name)
+        </dt>
+
+        <dd class="dl-horizontal form-group badge-light">
+            @Html.DisplayFor(model => model.Company_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <ul class="offset-9">
+        <li class="btn btn-outline-primary border-bottom ">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyID })
+        </li> |
+        <li class="btn btn-outline-primary border-bottom ">@Html.ActionLink("Back to List", "Index")</li>
+    </ul>
+    
+</p>

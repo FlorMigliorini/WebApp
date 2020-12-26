@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Info";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">@ViewBag.Title.</h2>
+</div>
+
+@*<h3>@ViewBag.Message</h3>*@
+
+
+
+<section class="container mt-3 bg-light animated slideInLeft">
+    <h3 class="border-bottom p-5s">First ASP.NET MVC Application</h3>
+    <div class="row mt-3">
+        <div class="col-sm mt-3">
+            <h5>Information about project</h5>
+            <p>
+                Project created in the MVC Web application, with individual user accounts.<br />
+                Layouts with personal style, using Bootstrap.<br />
+                Then, the entity classes were created, with a total of four tables, with relationship between the Attribution and Programmer entities, and one-to-many relationship between Company and Department with Attribution entities.
+                There was no need to install the Entity Framework.<br />
+                The Database Context, AContext, was created using DbSet, where set normally corresponds to a database table, and an entity corresponds to a row in the table.<br />
+                It was added to Web.config, in connectionStrings, to configure and use SQM Server LocalDB, and right after, the controllers were created (CRUD here).<br />
+                In sequence, the Seed method that the Entity Framework calls automatically after creating the database to fill it with test data was written. It was necessary to install Enabla-Migrations.<br />
+                For understanding: (The Seed method takes the database context object as an input parameter, and the code in the method uses that object to add new entities to the database. For each type of entity, the code creates a collection new entities, add them to the appropriate DbSet property and then save the changes to the database.)
+
+                <br />
+                About the development of this project, the biggest difficulty with the database, where it was necessary to redo it a few times. API and AJAX are not 100% working.
+                <br />
+                        
+            </p>
+            <small class="text-info">All information contained in this text was taken from the material available at NCI Moodle.</small>
+        </div>
+    </div>
+    </section>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApp.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">Departments</h2>
+</div>
+
+
+<li class="btn btn-outline-primary border-bottom p-5s mt-2">
+    @Html.ActionLink("Create New", "Create")</li>
+
+    <table class="table mt-2">
+        <tr class="table-primary">
+
+            <th class="table-light">
+                @Html.DisplayNameFor(model => model.Department_Type)
+            </th>
+            <th class="table-light"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_Type)
+                </td>
+                <td>
+                    <ul>
+                        <li class="btn btn-outline-primary border-bottom p-5s">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.DepartmentID })
+                        </li>|
+                        <li class="btn btn-outline-primary border-bottom p-5s">
+                            @Html.ActionLink("Details", "Details", new { id = item.DepartmentID })
+                        </li> |
+                        <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Delete", "Delete", new { id = item.DepartmentID })</li>
+                    </ul>
+</td>
+            </tr>
+        }
+
+    </table>

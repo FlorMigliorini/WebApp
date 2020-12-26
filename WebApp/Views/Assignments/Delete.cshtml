@@ -1,0 +1,42 @@
+﻿@model WebApp.Models.Assignment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">Delete</h2>
+</div>
+
+<h3 class="text-danger">Are you sure you want to delete this?</h3>
+<div>
+    <h4 class="text-primary">Assignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="form-group badge-light">
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+
+        <dd class="form-group badge-light">
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+
+        <dt class="form-group badge-light">
+            @Html.DisplayNameFor(model => model.DeadLineDate)
+        </dt>
+
+        <dd class="form-group badge-light">
+            @Html.DisplayFor(model => model.DeadLineDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color offset-9">
+            <input type="submit" value="Delete" class="btn btn-outline-primary border-bottom " /> |
+            <button class="btn btn-outline-primary border-bottom "> @Html.ActionLink("Back to List", "Index")</button>
+</div>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApp.Models.Programmer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row p-4 ">
+    <h2 class="text-black-50">Programmers</h2>
+</div>
+
+
+<li class="btn btn-outline-primary border-bottom p-5s mt-2 offset-10">
+    @Html.ActionLink("Create New", "Create")</li>
+
+    <table class="table mt-2">
+        <tr class="table-primary">
+
+            <th class="table-light">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="table-light">
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th class="table-light"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    <ul>
+                        <li class="btn btn-outline-primary border-bottom p-5s">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ProgrammerID })
+                        </li> |
+                        <li class="btn btn-outline-primary border-bottom p-5s">
+                            @Html.ActionLink("Details", "Details", new { id = item.ProgrammerID })
+                        </li> |
+                        <li class="btn btn-outline-primary border-bottom p-5s">@Html.ActionLink("Delete", "Delete", new { id = item.ProgrammerID })</li>
+                    </ul>
+                 </td>
+            </tr>
+        }
+
+    </table>
